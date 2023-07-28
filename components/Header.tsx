@@ -140,9 +140,9 @@ export default function Header({}: Props) {
                 </ul>
               </div>
               <Separator />
-              <SheetFooter>
+              <SheetFooter className="flex-row gap-2">
                 <a href="https://www.facebook.com" target="_blank">
-                  <Facebook className="stroke-[#868686] hover:stroke-black dark:stroke-white dark:hover:stroke-red-500 transition duration-300" />
+                  <Facebook className="stroke-[#868686] hover:stroke-black dark:stroke-white dark:hover:stroke-red-500 transition duration-300 max-w-max" />
                 </a>
                 <a href="https://www.instagram.com" target="_blank">
                   <Instagram className="stroke-[#868686] hover:stroke-black dark:stroke-white dark:hover:stroke-red-500 transition duration-300" />
