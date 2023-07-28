@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useTheme } from "next-themes";
 import {
   Search,
   User,
@@ -12,22 +15,31 @@ import {
   Instagram,
   Twitter,
   Linkedin,
+  Moon,
+  Sun,
 } from "lucide-react";
 
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
 
 type Props = {};
 
-export default function Navbar({}: Props) {
+export default function Header({}: Props) {
+  const { setTheme } = useTheme();
   return (
     <header className="bg-red-500 dark:bg-red-700 py-3">
       <div className="container flex justify-between items-center text-white">
@@ -60,7 +72,29 @@ export default function Navbar({}: Props) {
           <Search size="20" />
           <User size="20" />
           <ShoppingCart size="20" />
+          {/* Dark Mode Toggle */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => setTheme("light")}>
+                Light
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme("dark")}>
+                Dark
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme("system")}>
+                System
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
+        {/* Mobile Menu */}
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger>
@@ -69,10 +103,6 @@ export default function Navbar({}: Props) {
             <SheetContent className="flex flex-col">
               <SheetHeader>
                 <SheetTitle className="italic">Shade E-Com</SheetTitle>
-                {/* <SheetDescription>
-                  This action cannot be undone. This will permanently delete
-                  your account and remove your data from our servers.
-                </SheetDescription> */}
               </SheetHeader>
               <div className="mt-10 flex-1">
                 <ul className="w-full flex flex-col gap-4 ">
@@ -112,28 +142,16 @@ export default function Navbar({}: Props) {
               <Separator />
               <SheetFooter>
                 <a href="https://www.facebook.com" target="_blank">
-                  <Facebook
-                    color="#868686"
-                    className="hover:stroke-black transition duration-300"
-                  />
+                  <Facebook className="stroke-[#868686] hover:stroke-black dark:stroke-white dark:hover:stroke-red-500 transition duration-300" />
                 </a>
                 <a href="https://www.instagram.com" target="_blank">
-                  <Instagram
-                    color="#868686"
-                    className="hover:stroke-black transition duration-300"
-                  />
+                  <Instagram className="stroke-[#868686] hover:stroke-black dark:stroke-white dark:hover:stroke-red-500 transition duration-300" />
                 </a>
                 <a href="https://www.twitter.com" target="_blank">
-                  <Twitter
-                    color="#868686"
-                    className="hover:stroke-black transition duration-300"
-                  />
+                  <Twitter className="stroke-[#868686] hover:stroke-black dark:stroke-white dark:hover:stroke-red-500 transition duration-300" />
                 </a>
                 <a href="https://www.linkedin.com" target="_blank">
-                  <Linkedin
-                    color="#868686"
-                    className="hover:stroke-black transition duration-300"
-                  />
+                  <Linkedin className="stroke-[#868686] hover:stroke-black dark:stroke-white dark:hover:stroke-red-500 transition duration-300" />
                 </a>
               </SheetFooter>
             </SheetContent>

@@ -3,7 +3,7 @@ import { Roboto } from "next/font/google";
 
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "@/components/Navbar";
+import Header from "@/components/Header";
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={roboto.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar />
+          <Header />
           {children}
         </ThemeProvider>
       </body>
