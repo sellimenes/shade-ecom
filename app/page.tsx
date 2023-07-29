@@ -1,9 +1,11 @@
 import * as React from "react";
 
-import { Carousel } from "@/components/Carousel";
-import { Services } from "@/components/Services";
+import Carousel from "@/components/Carousel";
+import Services from "@/components/Services";
 import TripleBanners from "@/components/TripleBanners";
 import CollectionProductsCarousel from "@/components/CollectionProductsCarousel";
+import SocialAndBlog from "@/components/SocialAndBlog";
+import Partners from "@/components/Partners";
 
 export default function Home() {
   return (
@@ -12,7 +14,8 @@ export default function Home() {
       <Services />
       <TripleBanners />
       <CollectionProductsCarousel />
-      <div>test</div>
+      <SocialAndBlog />
+      <Partners />
     </main>
   );
 }

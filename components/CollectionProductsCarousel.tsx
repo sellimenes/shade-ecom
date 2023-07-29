@@ -34,9 +34,6 @@ const CollectionProductsCarousel = (props: Props) => {
           slidesPerView={5}
           spaceBetween={30}
           freeMode={true}
-          pagination={{
-            clickable: true,
-          }}
           modules={[FreeMode]}
           className="w-full"
         >
@@ -79,7 +76,7 @@ const SingleProductCard = () => {
   return (
     <div className="w-80">
       <div className=" aspect-square bg-gray-200 relative">
-        <div className="uppercase absolute top-2 left-3 px-3 py-1 rounded-full bg-primary text-white text-xs">
+        <div className="uppercase absolute top-2 left-3 px-3 py-1 rounded-full bg-card text-xs">
           Bedroom
         </div>
         {/* <img src="" alt=""/> */}

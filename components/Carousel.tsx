@@ -16,7 +16,7 @@ type Props = {
   height?: string;
 };
 
-export const Carousel = ({ height }: Props) => {
+const Carousel = ({ height }: Props) => {
   return (
     <section className="relative">
       <Swiper
@@ -81,6 +81,8 @@ export const Carousel = ({ height }: Props) => {
     </section>
   );
 };
+
+export default Carousel;
 
 const SocialIcons = () => {
   return (
