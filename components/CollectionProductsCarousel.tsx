@@ -31,38 +31,62 @@ const CollectionProductsCarousel = (props: Props) => {
           <span>View All</span>
         </Link>
         <Swiper
-          slidesPerView={5}
+          loop
+          breakpoints={{
+            710: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 4 },
+            1400: { slidesPerView: 5 },
+          }}
           spaceBetween={30}
           freeMode={true}
           modules={[FreeMode]}
           className="w-full"
         >
           <SwiperSlide>
-            <SingleProductCard />
+            <div className="flex justify-center">
+              <SingleProductCard />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <SingleProductCard />
+            <div className="flex justify-center">
+              <SingleProductCard />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <SingleProductCard />
+            <div className="flex justify-center">
+              <SingleProductCard />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <SingleProductCard />
+            <div className="flex justify-center">
+              <SingleProductCard />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <SingleProductCard />
+            <div className="flex justify-center">
+              <SingleProductCard />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <SingleProductCard />
+            <div className="flex justify-center">
+              <SingleProductCard />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <SingleProductCard />
+            <div className="flex justify-center">
+              <SingleProductCard />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <SingleProductCard />
+            <div className="flex justify-center">
+              <SingleProductCard />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <SingleProductCard />
+            <div className="flex justify-center">
+              <SingleProductCard />
+            </div>
           </SwiperSlide>
         </Swiper>
       </div>

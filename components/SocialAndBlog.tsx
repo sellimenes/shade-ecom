@@ -5,7 +5,7 @@ type Props = {};
 
 const SocialAndBlog = (props: Props) => {
   return (
-    <section className="w-full h-72 flex flex-col sm:flex-row my-16">
+    <section className="w-full h-72 flex flex-col sm:flex-row my-16 text-white">
       <div className="bg-[#242424] flex-1 flex flex-col items-center justify-center gap-2">
         <p className="text-3xl font-semibold text-center">
           Office Chair <br />
