@@ -41,7 +41,7 @@ type Props = {};
 export default function Header({}: Props) {
   const { setTheme } = useTheme();
   return (
-    <header className="bg-red-500 dark:bg-red-700 py-3">
+    <header className="bg-primary py-3">
       <div className="container flex justify-between items-center text-white">
         <Link href="/">
           <h1 className="italic font-bold text-2xl">Shade E-Com</h1>

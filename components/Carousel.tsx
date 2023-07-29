@@ -8,7 +8,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 // import required modules
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
+
+import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
 type Props = {
   height?: string;
@@ -16,11 +18,12 @@ type Props = {
 
 export const Carousel = ({ height }: Props) => {
   return (
-    <>
+    <section className="relative">
       <Swiper
         navigation
         loop
-        modules={[Navigation]}
+        autoplay={{ delay: 5000, pauseOnMouseEnter: true }}
+        modules={[Navigation, Autoplay]}
         className="w-full bg-gray-300"
         style={{ height: height }}
       >
@@ -70,6 +73,18 @@ export const Carousel = ({ height }: Props) => {
           </div>
         </SwiperSlide>
       </Swiper>
-    </>
+      <SocialIcons />
+    </section>
+  );
+};
+
+const SocialIcons = () => {
+  return (
+    <div className="z-20 flex items-center gap-2 absolute bottom-24 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-auto lg:right-10 lg:bottom-4">
+      <Facebook size={18} />
+      <Instagram size={18} />
+      <Twitter size={18} />
+      <Youtube size={18} />
+    </div>
   );
 };
