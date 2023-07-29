@@ -22,7 +22,11 @@ export const Carousel = ({ height }: Props) => {
       <Swiper
         navigation
         loop
-        autoplay={{ delay: 5000, pauseOnMouseEnter: true }}
+        autoplay={{
+          delay: 5000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+        }}
         modules={[Navigation, Autoplay]}
         className="w-full bg-gray-300"
         style={{ height: height }}
