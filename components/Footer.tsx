@@ -168,7 +168,7 @@ const Footer = (props: Props) => {
       <Separator />
       <div className="container flex flex-col md:flex-row sm:items-start sm:gap-3 justify-between py-5">
         <p>
-          Copyright `&copy;` 2023 Shade Software. We hid all rights. You can't
+          Copyright &copy; 2023 Shade Software. We hid all rights. You can&#39;t
           find them.
         </p>
         <Image src={IconsPayment} alt="payments" width={283} height={24} />
