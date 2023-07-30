@@ -36,7 +36,7 @@ const CollectionProductsCarousel = (props: Props) => {
             710: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
             1280: { slidesPerView: 4 },
-            1400: { slidesPerView: 5 },
+            1400: { slidesPerView: 6 },
           }}
           spaceBetween={30}
           freeMode={true}
