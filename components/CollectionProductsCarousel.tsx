@@ -12,7 +12,11 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
 // import required modules
-import { FreeMode } from "swiper/modules";
+import Image from "next/image";
+
+import Product1 from "@/public/products/product1.webp";
+import Product2 from "@/public/products/product2.webp";
+import Product3 from "@/public/products/product3.webp";
 
 type Props = {};
 
@@ -31,7 +35,6 @@ const CollectionProductsCarousel = (props: Props) => {
           <span>View All</span>
         </Link>
         <Swiper
-          loop
           breakpoints={{
             710: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
@@ -39,53 +42,51 @@ const CollectionProductsCarousel = (props: Props) => {
             1400: { slidesPerView: 6 },
           }}
           spaceBetween={30}
-          freeMode={true}
-          modules={[FreeMode]}
           className="w-full"
         >
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard />
+              <SingleProductCard image={Product1} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard />
+              <SingleProductCard image={Product2} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard />
+              <SingleProductCard image={Product3} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard />
+              <SingleProductCard image={Product2} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard />
+              <SingleProductCard image={Product1} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard />
+              <SingleProductCard image={Product2} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard />
+              <SingleProductCard image={Product3} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard />
+              <SingleProductCard image={Product2} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard />
+              <SingleProductCard image={Product1} />
             </div>
           </SwiperSlide>
         </Swiper>
@@ -96,14 +97,14 @@ const CollectionProductsCarousel = (props: Props) => {
 
 export default CollectionProductsCarousel;
 
-const SingleProductCard = () => {
+const SingleProductCard = ({ image }: any) => {
   return (
     <div className="w-80">
       <div className=" aspect-square bg-gray-200 relative">
         <div className="uppercase absolute top-2 left-3 px-3 py-1 rounded-full bg-card text-xs">
           Bedroom
         </div>
-        {/* <img src="" alt=""/> */}
+        <Image src={image} fill alt="product" objectFit="cover" />
       </div>
       <div className="mt-3">
         <h3 className="text-lg font-light opacity-70">

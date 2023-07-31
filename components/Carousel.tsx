@@ -12,6 +12,14 @@ import { Navigation, Autoplay } from "swiper/modules";
 
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
+import BannerCopyWrite from "@/public/banners/copywriting.png";
+import BannerConversions from "@/public/banners/conversions.png";
+import BannerManageReviews from "@/public/banners/managing-reviews.png";
+import BannerMobileSearch from "@/public/banners/mobile-search.png";
+import BannerPurchasingConversions from "@/public/banners/purchasing-conversions.png";
+import BannerTimeSpent from "@/public/banners/time-spent.png";
+import Image from "next/image";
+
 type Props = {
   height?: string;
 };
@@ -32,48 +40,63 @@ const Carousel = ({ height }: Props) => {
         style={{ height: height }}
       >
         <SwiperSlide>
-          <div className="w-full h-full flex items-center justify-center">
-            Slide 1
+          <div className="w-full h-full">
+            <Image
+              src={BannerCopyWrite}
+              alt="banner"
+              fill
+              objectFit="contain"
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-full flex items-center justify-center">
-            Slide 2
+          <div className="w-full h-full">
+            <Image
+              src={BannerConversions}
+              alt="banner"
+              fill
+              objectFit="contain"
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-full flex items-center justify-center">
-            Slide 3
+          <div className="w-full h-full">
+            <Image
+              src={BannerManageReviews}
+              alt="banner"
+              fill
+              objectFit="contain"
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-full flex items-center justify-center">
-            Slide 4
+          <div className="w-full h-full">
+            <Image
+              src={BannerMobileSearch}
+              alt="banner"
+              fill
+              objectFit="contain"
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-full flex items-center justify-center">
-            Slide 5
+          <div className="w-full h-full">
+            <Image
+              src={BannerPurchasingConversions}
+              alt="banner"
+              fill
+              objectFit="contain"
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-full flex items-center justify-center">
-            Slide 6
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full h-full flex items-center justify-center">
-            Slide 7
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full h-full flex items-center justify-center">
-            Slide 8
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full h-full flex items-center justify-center">
-            Slide 9
+          <div className="w-full h-full">
+            <Image
+              src={BannerTimeSpent}
+              alt="banner"
+              fill
+              objectFit="contain"
+            />
           </div>
         </SwiperSlide>
       </Swiper>
