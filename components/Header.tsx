@@ -52,19 +52,19 @@ export default function Header({}: Props) {
               <Link href="/">Home</Link>
             </li>
             <li className="hover:-translate-y-1 transition">
-              <Link href="/">Promotions</Link>
+              <Link href="/promotions">Promotions</Link>
             </li>
             <li className="hover:-translate-y-1 transition">
-              <Link href="/">Shop</Link>
+              <Link href="/shop">Shop</Link>
             </li>
             <li className="hover:-translate-y-1 transition">
-              <Link href="/">Products</Link>
+              <Link href="/products">Products</Link>
             </li>
             <li className="hover:-translate-y-1 transition">
-              <Link href="/">Blog</Link>
+              <Link href="/blog">Blog</Link>
             </li>
             <li className="hover:-translate-y-1 transition">
-              <Link href="/">Pages</Link>
+              <Link href="/pages">Pages</Link>
             </li>
           </ul>
         </nav>

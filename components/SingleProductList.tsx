@@ -9,7 +9,7 @@ const SingleProductList = ({ isSale }: Props) => {
   return (
     <div className="flex items-center gap-10">
       {/* TODO: Div image olacak */}
-      <div className="bg-muted w-2/5 h-full min-h-[300px] shadow-lg relative">
+      <div className="bg-muted aspect-square h-full min-h-[300px] shadow-lg relative">
         {isSale && (
           <div className="absolute left-2 top-2 px-3 py-1 bg-green-600 text-xs rounded-full text-white">
             Sale

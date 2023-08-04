@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 type Props = {
   isSale?: boolean;
@@ -6,7 +7,7 @@ type Props = {
 
 const SingleProductGrid = ({ isSale }: Props) => {
   return (
-    <div>
+    <Link href={`category/product`}>
       {/* TODO: Div will be turn to Image */}
       <div className="bg-muted w-full aspect-square mb-4 relative shadow-lg rounded-lg">
         {isSale && (
@@ -24,7 +25,7 @@ const SingleProductGrid = ({ isSale }: Props) => {
       ) : (
         <p>$89.99</p>
       )}
-    </div>
+    </Link>
   );
 };
 
