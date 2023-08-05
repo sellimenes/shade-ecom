@@ -4,23 +4,23 @@ import {
   Facebook,
   Instagram,
   Linkedin,
-  MailPlus,
   Youtube,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 import { Separator } from "@/components/ui/separator";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import SubscribeNewsletter from "@/components/SubscribeNewsletter";
 import IconsPayment from "/public/icons-payment.svg";
 
 type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <footer className="w-full bg-primary text-secondary flex flex-col">
-      <div className="container py-5 flex flex-col gap-10 lg:flex-row justify-between lg:items-center">
+    <footer className="w-full bg-primary text-secondary flex flex-col mt-auto">
+      <SubscribeNewsletter />
+      <Separator />
+      <div className="container py-5 flex flex-col gap-10 lg:flex-row justify-between">
         {/* Top Footer Left */}
         <div className="flex flex-col gap-3 lg:max-w-[33%]">
           <h2 className="italic text-2xl font-bold">Shade E-Com</h2>
@@ -46,12 +46,12 @@ const Footer = (props: Props) => {
           </div>
         </div>
         {/* Footer Links */}
-        <div className="flex items-start gap-10 flex-wrap">
+        <div className="flex items-start gap-10 flex-wrap text-sm">
           <div className="flex flex-col gap-4">
             <h3 className="text-xl font-semibold uppercase underline underline-offset-4">
               Informations
             </h3>
-            <ul className="flex flex-col gap-1">
+            <ul className="flex flex-col gap-1 text-white/60">
               <li>
                 <Link href="/#" className="flex items-center gap-1">
                   <CheckCircle2 size={15} /> Track Your Order
@@ -83,7 +83,7 @@ const Footer = (props: Props) => {
             <h3 className="text-xl font-semibold uppercase underline underline-offset-4">
               Polices
             </h3>
-            <ul className="flex flex-col gap-1">
+            <ul className="flex flex-col gap-1 text-white/60">
               <li>
                 <Link href="/#" className="flex items-center gap-1">
                   <CheckCircle2 size={15} /> Delivery
@@ -115,7 +115,7 @@ const Footer = (props: Props) => {
             <h3 className="text-xl font-semibold uppercase underline underline-offset-4">
               Product Links
             </h3>
-            <ul className="flex flex-col gap-1">
+            <ul className="flex flex-col gap-1 text-white/60">
               <li>
                 <Link href="/#" className="flex items-center gap-1">
                   <CheckCircle2 size={15} /> 3 Seater Sofas
@@ -143,26 +143,6 @@ const Footer = (props: Props) => {
               </li>
             </ul>
           </div>
-        </div>
-      </div>
-      <Separator />
-      <div className="container py-5 flex flex-col md:flex-row gap-5 md:items-center justify-between">
-        <div className="uppercase flex items-center gap-3">
-          <MailPlus size={55} className="text-destructive" />
-          <p className="text-lg font-semibold">
-            <span className="text-destructive">$90 Off*</span> your first order!
-            Subscribe to <br /> our newsletter today.
-          </p>
-        </div>
-        <div className="flex items-center h-12 w-full md:w-1/3">
-          <Input
-            type="email"
-            placeholder="Your email address"
-            className="rounded-r-0 rounded-l-full border-0 text-primary h-full"
-          />
-          <Button className="bg-destructive h-full rounded-r-full text-white hover:bg-transparent hover:text-destructive transition border border-destructive">
-            Subscribe
-          </Button>
         </div>
       </div>
       <Separator />

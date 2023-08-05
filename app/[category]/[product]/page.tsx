@@ -2,6 +2,7 @@ import React from "react";
 
 import ProductDetailCarousel from "@/components/ProductDetailCarousel";
 import ProductDetailInfo from "@/components/ProductDetailInfo";
+import SubscribeNewsletter from "@/components/SubscribeNewsletter";
 
 type Props = {};
 
