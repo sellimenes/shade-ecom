@@ -32,10 +32,6 @@ const ProductDetailCarousel = (props: Props) => {
   return (
     <div className="flex flex-col gap-2 max-w-[400px]">
       <Swiper
-        style={{
-          "--swiper-navigation-color": "#fff",
-          "--swiper-pagination-color": "#fff",
-        }}
         loop={true}
         spaceBetween={10}
         navigation={true}

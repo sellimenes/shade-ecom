@@ -78,3 +78,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white !important;
+}
