@@ -26,7 +26,7 @@ const ProductDetailCarousel = (props: Props) => {
 
   if (loading) {
     return (
-      <LoadingSpinner className="max-w-[400px] h-[500px] flex justify-center items-center" />
+      <LoadingSpinner className="w-[600px] h-[500px] flex justify-center items-center" />
     );
   }
   return (
@@ -71,7 +71,7 @@ const ProductDetailCarousel = (props: Props) => {
         </SwiperSlide>
       </Swiper>
       <Swiper
-        onSwiper={setThumbsSwiper}
+        // onSwiper={setThumbsSwiper}
         loop={true}
         spaceBetween={10}
         slidesPerView={4}
