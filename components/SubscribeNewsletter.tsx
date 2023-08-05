@@ -12,7 +12,7 @@ const SubscribeNewsletter = (props: Props) => {
     <div className="container py-5 flex flex-col md:flex-row gap-5 md:items-center justify-between">
       <div className="uppercase flex items-center gap-3">
         <MailPlus size={55} className="text-destructive" />
-        <p className="text-lg font-semibold">
+        <p className="font-semibold">
           <span className="text-destructive">$90 Off*</span> your first order!
           Subscribe to <br /> our newsletter today.
         </p>
