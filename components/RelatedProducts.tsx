@@ -13,7 +13,7 @@ const RelatedProducts = (props: Props) => {
       <p className="text-2xl text-primary font-semibold">Related Products</p>
       <div className="grid grid-cols-4 gap-4 mt-3">
         {data.map((item) => (
-          <SingleProduct />
+          <SingleProduct key={item} />
         ))}
       </div>
     </section>
