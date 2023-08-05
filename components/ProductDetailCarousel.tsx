@@ -26,7 +26,7 @@ const ProductDetailCarousel = (props: Props) => {
 
   if (loading) {
     return (
-      <LoadingSpinner className="w-[600px] h-[500px] flex justify-center items-center" />
+      <LoadingSpinner className="w-[620px] h-[500px] flex justify-center items-center" />
     );
   }
   return (
@@ -39,34 +39,34 @@ const ProductDetailCarousel = (props: Props) => {
         modules={[FreeMode, Navigation, Thumbs]}
         className="w-full"
       >
-        <SwiperSlide>
+        <SwiperSlide className="cursor-crosshair">
           <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="cursor-crosshair">
           <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="cursor-crosshair">
           <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="cursor-crosshair">
           <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="cursor-crosshair">
           <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="cursor-crosshair">
           <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="cursor-crosshair">
           <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="cursor-crosshair">
           <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="cursor-crosshair">
           <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="cursor-crosshair">
           <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
         </SwiperSlide>
       </Swiper>
