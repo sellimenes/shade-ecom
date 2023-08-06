@@ -27,7 +27,7 @@ const LoginModal = (props: Props) => {
         <DialogHeader>
           <DialogTitle>Login</DialogTitle>
           <DialogDescription>
-            Login to your profile here. Click save when you're done.
+            Login to your profile here. Click save when you&apos;re done.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4 ">

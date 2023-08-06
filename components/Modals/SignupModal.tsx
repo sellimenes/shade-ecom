@@ -27,7 +27,7 @@ const LoginModal = (props: Props) => {
         <DialogHeader>
           <DialogTitle>Signup</DialogTitle>
           <DialogDescription>
-            Create a new profile here. Click save when you're done.
+            Create a new profile here. Click save when you&apos;re done.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4 ">
