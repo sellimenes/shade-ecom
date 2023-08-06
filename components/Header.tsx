@@ -35,6 +35,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
+import LoginModal from "@/components/Modals/LoginModal";
+import SignupModal from "@/components/Modals/SignupModal";
 
 type Props = {};
 
@@ -46,6 +48,7 @@ export default function Header({}: Props) {
         <Link href="/">
           <h1 className="italic font-bold text-2xl">Shade E-Com</h1>
         </Link>
+
         <nav className="hidden md:block">
           <ul className="w-full flex items-center gap-4 ">
             <li className="hover:-translate-y-1 transition">
@@ -70,7 +73,15 @@ export default function Header({}: Props) {
         </nav>
         <div className="hidden md:flex items-center gap-4">
           <Search size="20" />
-          <User size="20" />
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild className="cursor-pointer">
+              <User size="20" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="flex flex-col gap-1 mt-4">
+              <LoginModal />
+              <SignupModal />
+            </DropdownMenuContent>
+          </DropdownMenu>
           <ShoppingCart size="20" />
           {/* Dark Mode Toggle */}
           <DropdownMenu>
