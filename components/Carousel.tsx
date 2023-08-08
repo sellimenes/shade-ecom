@@ -36,7 +36,7 @@ const Carousel = ({ height }: Props) => {
           disableOnInteraction: false,
         }}
         modules={[Navigation, Autoplay]}
-        className="w-full bg-gray-300"
+        className="w-full border-b border-primary"
         style={{ height: height }}
       >
         <SwiperSlide>
