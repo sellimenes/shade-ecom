@@ -18,7 +18,7 @@ type Props = {};
 const LoginModal = (props: Props) => {
   return (
     <Dialog>
-      <DialogTrigger className="w-full">
+      <DialogTrigger>
         <Button size={"full"} variant={"destructive"}>
           Login
         </Button>
