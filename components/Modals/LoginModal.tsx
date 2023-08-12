@@ -1,4 +1,5 @@
 import React from "react";
+import { signIn } from "next-auth/react";
 
 import {
   Dialog,
@@ -16,6 +17,21 @@ import { Button } from "@/components/ui/button";
 type Props = {};
 
 const LoginModal = (props: Props) => {
+  const login = () => {
+    signIn("credentials", {
+      // ...data,
+      email: "testemail@mail.com",
+      password: "testpassword",
+      redirect: false,
+    }).then((callback) => {
+      if (callback?.error) {
+        console.log(callback.error);
+      }
+      if (callback?.ok) {
+        console.log("giriş yapıldı");
+      }
+    });
+  };
   return (
     <Dialog>
       <DialogTrigger>
@@ -27,7 +43,7 @@ const LoginModal = (props: Props) => {
         <DialogHeader>
           <DialogTitle>Login</DialogTitle>
           <DialogDescription>
-            Login to your profile here. Click save when you&apos;re done.
+            Login to your profile here. Click Login when you&apos;re done.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4 ">
@@ -51,7 +67,9 @@ const LoginModal = (props: Props) => {
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">Login</Button>
+          <Button type="submit" onClick={login}>
+            Login
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

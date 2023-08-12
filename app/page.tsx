@@ -1,4 +1,5 @@
 import * as React from "react";
+import axios from "axios";
 
 import Carousel from "@/components/Carousel";
 import Services from "@/components/Services";

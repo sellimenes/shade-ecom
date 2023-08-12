@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 import {
   Dialog,
@@ -16,6 +17,12 @@ import { Button } from "@/components/ui/button";
 type Props = {};
 
 const LoginModal = (props: Props) => {
+  const register = async () => {
+    await axios.post("/api/register", {
+      email: "testemail@mail.com",
+      password: "testpassword",
+    });
+  };
   return (
     <Dialog>
       <DialogTrigger>
@@ -60,7 +67,9 @@ const LoginModal = (props: Props) => {
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">Signup</Button>
+          <Button type="submit" onClick={register}>
+            Signup
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
