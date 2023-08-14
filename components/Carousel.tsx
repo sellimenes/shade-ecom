@@ -41,12 +41,7 @@ const Carousel = ({ height }: Props) => {
       >
         <SwiperSlide>
           <div className="w-full h-full">
-            <Image
-              src={BannerCopyWrite}
-              alt="banner"
-              fill
-              objectFit="contain"
-            />
+            <Image src={BannerCopyWrite} alt="banner" fill objectFit="cover" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -55,7 +50,7 @@ const Carousel = ({ height }: Props) => {
               src={BannerConversions}
               alt="banner"
               fill
-              objectFit="contain"
+              objectFit="cover"
             />
           </div>
         </SwiperSlide>
@@ -65,7 +60,7 @@ const Carousel = ({ height }: Props) => {
               src={BannerManageReviews}
               alt="banner"
               fill
-              objectFit="contain"
+              objectFit="cover"
             />
           </div>
         </SwiperSlide>
@@ -75,7 +70,7 @@ const Carousel = ({ height }: Props) => {
               src={BannerMobileSearch}
               alt="banner"
               fill
-              objectFit="contain"
+              objectFit="cover"
             />
           </div>
         </SwiperSlide>
@@ -85,18 +80,13 @@ const Carousel = ({ height }: Props) => {
               src={BannerPurchasingConversions}
               alt="banner"
               fill
-              objectFit="contain"
+              objectFit="cover"
             />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-full h-full">
-            <Image
-              src={BannerTimeSpent}
-              alt="banner"
-              fill
-              objectFit="contain"
-            />
+            <Image src={BannerTimeSpent} alt="banner" fill objectFit="cover" />
           </div>
         </SwiperSlide>
       </Swiper>
