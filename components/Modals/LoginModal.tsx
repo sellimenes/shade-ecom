@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { signIn } from "next-auth/react";
 
 import {
   Dialog,
@@ -16,8 +17,22 @@ import { Button } from "@/components/ui/button";
 type Props = {};
 
 const LoginModal = (props: Props) => {
+  const [open, setOpen] = useState(false);
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const login = async () => {
+    await signIn("credentials", {
+      email: data.email,
+      password: data.password,
+      redirect: false,
+    });
+    setOpen(false);
+  };
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger>
         <Button size={"full"} variant={"destructive"}>
           Login
@@ -38,6 +53,8 @@ const LoginModal = (props: Props) => {
               type="email"
               placeholder="user@mail.com"
               className="col-span-3"
+              value={data.email}
+              onChange={(e) => setData({ ...data, email: e.target.value })}
             />
           </div>
           <div className="grid grid-cols-4 items-center">
@@ -47,11 +64,15 @@ const LoginModal = (props: Props) => {
               type="password"
               placeholder="nothackablepassword"
               className="col-span-3"
+              value={data.password}
+              onChange={(e) => setData({ ...data, password: e.target.value })}
             />
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">Login</Button>
+          <Button type="submit" onClick={login}>
+            Login
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
