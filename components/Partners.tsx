@@ -36,7 +36,7 @@ const Partners = (props: Props) => {
       <Swiper loop slidesPerView={6} freeMode={true} modules={[FreeMode]}>
         {partneImages.map((image) => {
           return (
-            <SwiperSlide key={Date.now()}>
+            <SwiperSlide key={Math.random()}>
               <div className="h-14">
                 <Image src={image} fill alt="" objectFit="contain" />
               </div>

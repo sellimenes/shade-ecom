@@ -1,4 +1,7 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import axios from "axios";
 
 import {
   Dialog,
@@ -15,9 +18,32 @@ import { Button } from "@/components/ui/button";
 
 type Props = {};
 
+const register = (data: any) => {
+  axios.post("/api/register", {
+    email: data.email,
+    password: data.password,
+  });
+};
+
 const LoginModal = (props: Props) => {
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+    password2: "",
+  });
+  const [open, setOpen] = useState(false);
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    if (data.password === data.password2) {
+      register(data);
+      setOpen(false);
+    } else {
+      console.log("Passwords don't match");
+    }
+  };
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger>
         <Button size={"full"} variant={"destructive"}>
           Signup
@@ -32,12 +58,14 @@ const LoginModal = (props: Props) => {
         </DialogHeader>
         <div className="grid gap-4 py-4 ">
           <div className="grid grid-cols-4 items-center">
-            <Label htmlFor="name">Username</Label>
+            <Label htmlFor="email">Email</Label>
             <Input
               id="email"
               type="email"
               placeholder="user@mail.com"
               className="col-span-3"
+              value={data.email}
+              onChange={(e) => setData({ ...data, email: e.target.value })}
             />
           </div>
           <div className="grid grid-cols-4 items-center">
@@ -47,6 +75,8 @@ const LoginModal = (props: Props) => {
               type="password"
               placeholder="nothackablepassword"
               className="col-span-3"
+              value={data.password}
+              onChange={(e) => setData({ ...data, password: e.target.value })}
             />
           </div>
           <div className="grid grid-cols-4 items-center">
@@ -56,11 +86,15 @@ const LoginModal = (props: Props) => {
               type="password"
               placeholder="nothackablepassword"
               className="col-span-3"
+              value={data.password2}
+              onChange={(e) => setData({ ...data, password2: e.target.value })}
             />
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">Signup</Button>
+          <Button type="submit" onClick={handleSubmit}>
+            Signup
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
