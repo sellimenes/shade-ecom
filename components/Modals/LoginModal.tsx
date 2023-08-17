@@ -40,10 +40,10 @@ const LoginModal = (props: Props) => {
           Login
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] bg-primary">
         <DialogHeader>
           <DialogTitle>Login</DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="text-secondary">
             Login to your profile here. Click save when you&apos;re done.
           </DialogDescription>
         </DialogHeader>
@@ -77,7 +77,7 @@ const LoginModal = (props: Props) => {
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit" onClick={login}>
+          <Button type="submit" onClick={login} variant={"secondary"}>
             Login
           </Button>
         </DialogFooter>

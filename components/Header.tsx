@@ -93,7 +93,7 @@ export default function Header({}: Props) {
                 {session?.status === "authenticated" ? "Hesabım" : "Giriş Yap"}
               </div>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="mt-4">
+            <DropdownMenuContent className="mt-4 hidden md:block">
               {session?.status === "authenticated" ? (
                 <div>
                   <p>
@@ -144,12 +144,14 @@ export default function Header({}: Props) {
             <SheetTrigger>
               <Menu size="24" />
             </SheetTrigger>
-            <SheetContent className="flex flex-col">
+            <SheetContent className="flex flex-col bg-primary">
               <SheetHeader>
-                <SheetTitle className="italic">Shade E-Com</SheetTitle>
+                <SheetTitle className="italic text-secondary">
+                  Shade E-Com
+                </SheetTitle>
               </SheetHeader>
               <div className="mt-10 flex-1">
-                <ul className="w-full flex flex-col gap-4 ">
+                <ul className="w-full flex flex-col gap-4 text-secondary">
                   <li className="hover:-translate-y-1 transition">
                     <Link href="/" className="flex items-center gap-1">
                       <Home size={16} className="mb-1" /> Home
@@ -183,19 +185,55 @@ export default function Header({}: Props) {
                   </li>
                 </ul>
               </div>
+              <div className="flex items-center gap-4 text-secondary">
+                <DropdownMenu
+                  open={isDropdownOpen}
+                  onOpenChange={setIsDropdownOpen}
+                >
+                  <DropdownMenuTrigger asChild className="cursor-pointer">
+                    <div className="flex items-center gap-1">
+                      <User size="20" />
+                      {session?.status === "authenticated"
+                        ? "Hesabım"
+                        : "Giriş Yap"}
+                    </div>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="mt-4">
+                    {session?.status === "authenticated" ? (
+                      <div>
+                        <p>
+                          Oooo welcome <br /> {session?.data?.user?.email}
+                        </p>
+                        <Button
+                          variant={"default"}
+                          size={"full"}
+                          onClick={handleSignOut}
+                        >
+                          Çıkış Yap
+                        </Button>
+                      </div>
+                    ) : (
+                      <div className="flex flex-col gap-1 ">
+                        <LoginModal />
+                        <SignupModal />
+                      </div>
+                    )}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
               <Separator />
               <SheetFooter className="flex-row gap-2">
                 <a href="https://www.facebook.com" target="_blank">
-                  <Facebook className="stroke-[#868686] hover:stroke-black dark:stroke-white dark:hover:stroke-red-500 transition duration-300 max-w-max" />
+                  <Facebook className="stroke-secondary hover:stroke-black dark:stroke-white dark:hover:stroke-red-500 transition duration-300 max-w-max" />
                 </a>
                 <a href="https://www.instagram.com" target="_blank">
-                  <Instagram className="stroke-[#868686] hover:stroke-black dark:stroke-white dark:hover:stroke-red-500 transition duration-300" />
+                  <Instagram className="stroke-secondary hover:stroke-black dark:stroke-white dark:hover:stroke-red-500 transition duration-300" />
                 </a>
                 <a href="https://www.twitter.com" target="_blank">
-                  <Twitter className="stroke-[#868686] hover:stroke-black dark:stroke-white dark:hover:stroke-red-500 transition duration-300" />
+                  <Twitter className="stroke-secondary hover:stroke-black dark:stroke-white dark:hover:stroke-red-500 transition duration-300" />
                 </a>
                 <a href="https://www.linkedin.com" target="_blank">
-                  <Linkedin className="stroke-[#868686] hover:stroke-black dark:stroke-white dark:hover:stroke-red-500 transition duration-300" />
+                  <Linkedin className="stroke-secondary hover:stroke-black dark:stroke-white dark:hover:stroke-red-500 transition duration-300" />
                 </a>
               </SheetFooter>
             </SheetContent>
