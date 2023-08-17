@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import axios from "axios";
+import { signIn } from "next-auth/react";
 
 import {
   Dialog,
@@ -18,11 +19,17 @@ import { Button } from "@/components/ui/button";
 
 type Props = {};
 
-const register = (data: any) => {
-  axios.post("/api/register", {
+const register = async (data: any) => {
+  await axios.post("/api/register", {
     email: data.email,
     password: data.password,
   });
+
+  await signIn("credentials", {
+    email: data.email,
+    password: data.password,
+    redirect: false,
+  } as any);
 };
 
 const LoginModal = (props: Props) => {
@@ -37,6 +44,7 @@ const LoginModal = (props: Props) => {
     e.preventDefault();
     if (data.password === data.password2) {
       register(data);
+
       setOpen(false);
     } else {
       console.log("Passwords don't match");
