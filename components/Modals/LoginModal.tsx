@@ -68,6 +68,11 @@ const LoginModal = (props: Props) => {
               className="col-span-3"
               value={data.password}
               onChange={(e) => setData({ ...data, password: e.target.value })}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  login();
+                }
+              }}
             />
           </div>
         </div>
