@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { signIn, useSession } from "next-auth/react";
+import React, { useState } from "react";
+import { signIn } from "next-auth/react";
 
 import {
   Dialog,
@@ -19,7 +19,6 @@ import { Button } from "@/components/ui/button";
 type Props = {};
 
 const LoginModal = (props: Props) => {
-  const session = useSession();
   const [open, setOpen] = useState(false);
   const [data, setData] = useState({
     email: "",
@@ -34,10 +33,6 @@ const LoginModal = (props: Props) => {
     });
     setOpen(false);
   };
-
-  useEffect(() => {
-    console.log(session);
-  }, [session]);
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger>

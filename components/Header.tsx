@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { useSession, signOut } from "next-auth/react";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import {
   Search,
@@ -41,6 +43,17 @@ import SignupModal from "@/components/Modals/SignupModal";
 type Props = {};
 
 export default function Header({}: Props) {
+  const session = useSession();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleSignOut = () => {
+    signOut();
+  };
+
+  useEffect(() => {
+    console.log(session);
+    setIsDropdownOpen(false);
+  }, [session]);
   const { setTheme } = useTheme();
   return (
     <header className="bg-primary py-3 text-white">
@@ -73,13 +86,33 @@ export default function Header({}: Props) {
         </nav>
         <div className="hidden md:flex items-center gap-4">
           <Search size="20" />
-          <DropdownMenu>
+          <DropdownMenu open={isDropdownOpen} onOpenChange={setIsDropdownOpen}>
             <DropdownMenuTrigger asChild className="cursor-pointer">
-              <User size="20" />
+              <div className="flex items-center gap-1">
+                <User size="20" />
+                {session?.status === "authenticated" ? "Hesabım" : "Giriş Yap"}
+              </div>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="flex flex-col gap-1 mt-4">
-              <LoginModal />
-              <SignupModal />
+            <DropdownMenuContent className="mt-4">
+              {session?.status === "authenticated" ? (
+                <div>
+                  <p>
+                    Oooo welcome <br /> {session?.data?.user?.email}
+                  </p>
+                  <Button
+                    variant={"default"}
+                    size={"full"}
+                    onClick={handleSignOut}
+                  >
+                    Çıkış Yap
+                  </Button>
+                </div>
+              ) : (
+                <div className="flex flex-col gap-1 ">
+                  <LoginModal />
+                  <SignupModal />
+                </div>
+              )}
             </DropdownMenuContent>
           </DropdownMenu>
           <ShoppingCart size="20" />
