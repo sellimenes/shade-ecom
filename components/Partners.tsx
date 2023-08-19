@@ -38,7 +38,14 @@ const Partners = (props: Props) => {
           return (
             <SwiperSlide key={Math.random()}>
               <div className="h-14">
-                <Image src={image} fill alt="" objectFit="contain" />
+                <Image
+                  src={image}
+                  fill
+                  alt=""
+                  style={{
+                    objectFit: "contain",
+                  }}
+                />
               </div>
             </SwiperSlide>
           );

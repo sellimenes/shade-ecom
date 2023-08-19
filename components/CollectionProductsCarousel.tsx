@@ -104,7 +104,14 @@ const SingleProductCard = ({ image }: any) => {
         <div className="uppercase absolute top-2 left-3 px-3 py-1 rounded-full bg-card text-xs">
           Bedroom
         </div>
-        <Image src={image} fill alt="product" objectFit="cover" />
+        <Image
+          src={image}
+          fill
+          alt="product"
+          style={{
+            objectFit: "cover",
+          }}
+        />
       </div>
       <div className="mt-3">
         <h3 className="text-lg font-light opacity-70">

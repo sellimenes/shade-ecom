@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 
-import "./globals.css";
+import "../globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import SessionProvider from "@/lib/SessionProvider";
 
 const roboto = Roboto({
@@ -15,7 +13,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Shade E-Commerce App",
+  title: "Admin | Shade E-Commerce App",
   description: "E-Commerce App built with Top-Notch Tech Stack",
 };
 
@@ -29,9 +27,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <SessionProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <Header />
             {children}
-            <Footer />
           </ThemeProvider>
         </SessionProvider>
       </body>

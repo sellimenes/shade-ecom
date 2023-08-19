@@ -41,7 +41,14 @@ const Carousel = ({ height }: Props) => {
       >
         <SwiperSlide>
           <div className="w-full h-full">
-            <Image src={BannerCopyWrite} alt="banner" fill objectFit="cover" />
+            <Image
+              src={BannerCopyWrite}
+              alt="banner"
+              fill
+              style={{
+                objectFit: "cover",
+              }}
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -50,7 +57,9 @@ const Carousel = ({ height }: Props) => {
               src={BannerConversions}
               alt="banner"
               fill
-              objectFit="cover"
+              style={{
+                objectFit: "cover",
+              }}
             />
           </div>
         </SwiperSlide>
@@ -60,7 +69,9 @@ const Carousel = ({ height }: Props) => {
               src={BannerManageReviews}
               alt="banner"
               fill
-              objectFit="cover"
+              style={{
+                objectFit: "cover",
+              }}
             />
           </div>
         </SwiperSlide>
@@ -70,7 +81,9 @@ const Carousel = ({ height }: Props) => {
               src={BannerMobileSearch}
               alt="banner"
               fill
-              objectFit="cover"
+              style={{
+                objectFit: "cover",
+              }}
             />
           </div>
         </SwiperSlide>
@@ -80,13 +93,22 @@ const Carousel = ({ height }: Props) => {
               src={BannerPurchasingConversions}
               alt="banner"
               fill
-              objectFit="cover"
+              style={{
+                objectFit: "cover",
+              }}
             />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="w-full h-full">
-            <Image src={BannerTimeSpent} alt="banner" fill objectFit="cover" />
+            <Image
+              src={BannerTimeSpent}
+              alt="banner"
+              fill
+              style={{
+                objectFit: "cover",
+              }}
+            />
           </div>
         </SwiperSlide>
       </Swiper>

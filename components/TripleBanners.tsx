@@ -9,14 +9,14 @@ type Props = {};
 
 const TripleBanners = (props: Props) => {
   return (
-    <section className="my-10 px-10 w-full flex items-center justify-between gap-6">
-      <div className="flex-1 aspect-video relative">
+    <section className="my-10 px-10 w-full flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="aspect-video relative w-full">
         <Image src={Banner1} fill alt="banner" />
       </div>
-      <div className="flex-1 aspect-video relative">
+      <div className="aspect-video relative w-full">
         <Image src={Banner2} fill alt="banner" />
       </div>
-      <div className="flex-1 aspect-video relative">
+      <div className="aspect-video relative w-full">
         <Image src={Banner3} fill alt="banner" />
       </div>
     </section>

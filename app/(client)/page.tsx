@@ -7,7 +7,7 @@ import CollectionProductsCarousel from "@/components/CollectionProductsCarousel"
 import SocialAndBlog from "@/components/SocialAndBlog";
 import Partners from "@/components/Partners";
 
-export default function Home() {
+function Home() {
   return (
     <main className="w-full h-full">
       <Carousel height="550px" />
@@ -19,3 +19,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default Home;
