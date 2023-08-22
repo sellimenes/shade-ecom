@@ -6,9 +6,15 @@ type Props = {};
 
 const ProductDetailTabs = (props: Props) => {
   return (
-    <Tabs defaultValue="description" className="w-full">
-      <TabsList className="w-full justify-start bg-primary text-secondary">
-        <TabsTrigger value="description" className="rounded-r-none">
+    <Tabs
+      defaultValue="description"
+      className="w-full border shadow-md rounded-t-md"
+    >
+      <TabsList className="w-full justify-start bg-primary text-secondary rounded-b-none">
+        <TabsTrigger
+          value="description"
+          className="rounded-r-none rounded-bl-none"
+        >
           Product Description
         </TabsTrigger>
         <TabsTrigger value="reviews" className="rounded-none">
@@ -21,16 +27,16 @@ const ProductDetailTabs = (props: Props) => {
           Additional Information
         </TabsTrigger>
       </TabsList>
-      <TabsContent value="description">
+      <TabsContent value="description" className="p-2">
         Product description will be here. All HTML etc. supported.
       </TabsContent>
-      <TabsContent value="reviews">
+      <TabsContent value="reviews" className="p-2">
         Reviews will be here. All HTML etc. supported.
       </TabsContent>
-      <TabsContent value="tags">
+      <TabsContent value="tags" className="p-2">
         Tags will be here. All HTML etc. supported.
       </TabsContent>
-      <TabsContent value="additionals">
+      <TabsContent value="additionals" className="p-2">
         Additional informations will be here. All HTML etc. supported.
       </TabsContent>
     </Tabs>
