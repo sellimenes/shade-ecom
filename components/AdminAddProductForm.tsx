@@ -3,7 +3,7 @@
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Link from "next/link";
+import axios from "axios";
 
 import {
   Form,
@@ -24,11 +24,11 @@ const formSchema = z.object({
   name: z
     .string()
     .min(1, { message: "Name must be at least 1 character long" }),
-  price: z.number().min(0, { message: "Price must be at least 0" }),
+  price: z.string().min(0, { message: "Price must be at least 0" }),
   description: z
     .string()
     .min(1, { message: "Description must be at least 1 character long" }),
-  category: z.string(),
+  categoryId: z.string(),
   isFeatured: z.boolean(),
   isArchived: z.boolean(),
 });
@@ -38,16 +38,20 @@ const AdminAddProductForm = (props: Props) => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
-      price: 0,
+      price: "0",
       description: "",
-      category: "",
+      categoryId: "",
       isFeatured: false,
       isArchived: false,
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+    await axios.post("/api/products", {
+      ...values,
+      price: parseFloat(values.price),
+    });
   }
   return (
     <Form {...form}>
@@ -93,7 +97,7 @@ const AdminAddProductForm = (props: Props) => {
         />
         <FormField
           control={form.control}
-          name="category"
+          name="categoryId"
           render={({ field }) => (
             <FormItem>
               <FormLabel>*Category</FormLabel>
