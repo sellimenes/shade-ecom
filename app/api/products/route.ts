@@ -37,3 +37,18 @@ export async function POST(request: Request) {
     return new NextResponse("Internal Error", { status: 500 });
   }
 }
+
+export async function GET() {
+  try {
+    const products = await prisma.product.findMany({
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
+
+    return NextResponse.json(products);
+  } catch (error: any) {
+    console.log(error, "PRODUCTS GET ERROR");
+    return new NextResponse("Internal Error", { status: 500 });
+  }
+}
