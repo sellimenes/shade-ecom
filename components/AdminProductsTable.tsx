@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 import { cn } from "@/lib/utils";
 import {
   Table,
@@ -35,8 +39,12 @@ const tableHeaderItems = [
   },
 ];
 
-const AdminProductsTable = async (props: Props) => {
-  const products = await getProducts();
+const AdminProductsTable = (props: Props) => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getProducts().then((products) => setProducts(products));
+  }, []);
   return (
     <Table>
       <TableCaption>A list of your recent invoices.</TableCaption>
