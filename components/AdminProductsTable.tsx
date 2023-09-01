@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Trash2 } from "lucide-react";
+import axios from "axios";
 
 import { cn } from "@/lib/utils";
 import {
@@ -46,7 +48,12 @@ const AdminProductsTable = (props: Props) => {
 
   useEffect(() => {
     getProducts().then((products) => setProducts(products));
-  }, []);
+  }, [products]);
+
+  const handleDelete = (id: string) => {
+    console.log("delete");
+    axios.delete(`/api/products/${id}`);
+  };
   return (
     <Table>
       <TableCaption>A list of your recent invoices.</TableCaption>
@@ -66,7 +73,13 @@ const AdminProductsTable = (props: Props) => {
             <TableCell>{product.price}</TableCell>
             <TableCell>{product.stock || 10}</TableCell>
             <TableCell className="">{product.categoryId}</TableCell>
-            <TableCell className="text-right">İşlemler</TableCell>
+            <TableCell>
+              <Trash2
+                size={18}
+                className="ml-auto text-destructive hover:cursor-pointer hover:opacity-75"
+                onClick={() => handleDelete(product.id)}
+              />
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
