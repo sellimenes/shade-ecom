@@ -2,9 +2,11 @@ import React from "react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-type Props = {};
+type Props = {
+  data: any;
+};
 
-const ProductDetailTabs = (props: Props) => {
+const ProductDetailTabs = ({ data }: Props) => {
   return (
     <Tabs
       defaultValue="description"
@@ -28,7 +30,7 @@ const ProductDetailTabs = (props: Props) => {
         </TabsTrigger>
       </TabsList>
       <TabsContent value="description" className="p-2">
-        Product description will be here. All HTML etc. supported.
+        {data.description}
       </TabsContent>
       <TabsContent value="reviews" className="p-2">
         Reviews will be here. All HTML etc. supported.

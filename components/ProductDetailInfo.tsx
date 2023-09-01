@@ -5,9 +5,11 @@ import { Star } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "./ui/button";
 
-type Props = {};
+type Props = {
+  data: any;
+};
 
-const ProductDetailInfo = (props: Props) => {
+const ProductDetailInfo = ({ data }: Props) => {
   return (
     <div className="w-full">
       <div className="flex items-center justify-between">
@@ -23,16 +25,13 @@ const ProductDetailInfo = (props: Props) => {
           <p className="text-primary/60">4 review(s)</p>
         </div>
       </div>
-      <h2 className="text-4xl">Crew Neck T-Shirt</h2>
+      <h2 className="text-4xl">{data.name}</h2>
       <p className="mt-2 text-2xl font-light text-primary/70">
-        $134.00 <span>(In stock)</span>
+        ${data.price} <span>(In stock)</span>
       </p>
       <Separator className="my-8" />
       <div className=" max-w-[90%]">
-        <p className="text-primary/60 text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua
-        </p>
+        <p className="text-primary/60 text-lg">{data.description}</p>
       </div>
       <Separator className="my-8" />
       <Button className="max-w-max px-16 mb-4">Add to Cart</Button>

@@ -3,11 +3,12 @@ import Link from "next/link";
 
 type Props = {
   isSale?: boolean;
+  data: any;
 };
 
-const SingleProductGrid = ({ isSale }: Props) => {
+const SingleProductGrid = ({ isSale, data }: Props) => {
   return (
-    <Link href={`category/product`}>
+    <Link href={`category/${data.id}`}>
       {/* TODO: Div will be turn to Image */}
       <div className="bg-muted w-full aspect-square mb-4 relative shadow-lg rounded-lg">
         {isSale && (
@@ -16,14 +17,14 @@ const SingleProductGrid = ({ isSale }: Props) => {
           </div>
         )}
       </div>
-      <h3 className="font-light text-xl">Örnek Product</h3>
+      <h3 className="font-light text-xl">{data.name}</h3>
       {isSale ? (
         <div className="flex gap-2">
           <p className="text-gray-300 line-through">$89.99</p>
-          <p>$69.99</p>
+          <p>${data.price}</p>
         </div>
       ) : (
-        <p>$89.99</p>
+        <p>${data.price}</p>
       )}
     </Link>
   );

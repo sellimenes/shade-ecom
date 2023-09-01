@@ -1,24 +1,28 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { LayoutGrid, List } from "lucide-react";
 
 import Banner from "@/components/Banner";
 import PageHead from "@/components/PageHead";
 import SingleProductGrid from "@/components/SingleProductGrid";
+import SingleProductList from "@/components/SingleProductList";
+import { cn } from "@/lib/utils";
+import getProducts from "@/actions/getProducts";
 
 import BannerPic from "@/public/banners/Banners-02.png";
-
-import { LayoutGrid, List } from "lucide-react";
-import { cn } from "@/lib/utils";
-import SingleProductList from "@/components/SingleProductList";
 
 type Props = {};
 
 const CategoryPage = (props: Props) => {
-  const cards = [1, 2, 3, 4, 5, 6, 7, , 8, 9, 10, 11, 12];
-
+  const [products, setProducts] = useState([]);
   const [listType, setListType] = useState("grid");
+
+  useEffect(() => {
+    getProducts().then((products) => setProducts(products));
+  }, [products]);
+
   return (
     <>
       <PageHead title="Page Title" />
@@ -54,11 +58,11 @@ const CategoryPage = (props: Props) => {
               listType === "grid" ? "grid-cols-3" : "grid-cols-1"
             )}
           >
-            {cards.map((card) =>
+            {products.map((product) =>
               listType === "grid" ? (
-                <SingleProductGrid key={card} isSale />
+                <SingleProductGrid key={product?.id} data={product} isSale />
               ) : (
-                <SingleProductList key={card} isSale />
+                <SingleProductList key={product?.id} data={product} isSale />
               )
             )}
           </section>

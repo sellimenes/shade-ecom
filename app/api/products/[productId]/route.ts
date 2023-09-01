@@ -15,10 +15,11 @@ export async function GET(
       where: {
         id: params.productId,
       },
-      include: {
-        category: true,
-      },
     });
+
+    if (!product) {
+      return new NextResponse("Product not found.", { status: 404 });
+    }
 
     return NextResponse.json(product);
   } catch (error) {
