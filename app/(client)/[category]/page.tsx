@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 import getProducts from "@/actions/getProducts";
 
 import BannerPic from "@/public/banners/Banners-02.png";
+import { Product } from "@prisma/client";
 
 type Props = {};
 
@@ -58,7 +59,7 @@ const CategoryPage = (props: Props) => {
               listType === "grid" ? "grid-cols-3" : "grid-cols-1"
             )}
           >
-            {products.map((product) =>
+            {products.map((product: Product) =>
               listType === "grid" ? (
                 <SingleProductGrid key={product?.id} data={product} isSale />
               ) : (
