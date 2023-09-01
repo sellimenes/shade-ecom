@@ -64,22 +64,22 @@ export default function Header({}: Props) {
 
         <nav className="hidden md:block">
           <ul className="w-full flex items-center gap-4 ">
-            <li className="hover:-translate-y-1 transition">
+            <li className="hover:underline">
               <Link href="/">Home</Link>
             </li>
-            <li className="hover:-translate-y-1 transition">
+            <li className="hover:underline">
               <Link href="/promotions">Promotions</Link>
             </li>
-            <li className="hover:-translate-y-1 transition">
+            <li className="hover:underline">
               <Link href="/shop">Shop</Link>
             </li>
-            <li className="hover:-translate-y-1 transition">
+            <li className="hover:underline">
               <Link href="/products">Products</Link>
             </li>
-            <li className="hover:-translate-y-1 transition">
+            <li className="hover:underline">
               <Link href="/blog">Blog</Link>
             </li>
-            <li className="hover:-translate-y-1 transition">
+            <li className="hover:underline">
               <Link href="/pages">Pages</Link>
             </li>
           </ul>

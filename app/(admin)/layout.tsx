@@ -5,6 +5,7 @@ import "../globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import SessionProvider from "@/lib/SessionProvider";
+import AdminSidebar from "@/components/AdminSidebar";
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -27,7 +28,10 @@ export default function RootLayout({
       <body className={roboto.className}>
         <SessionProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            {children}
+            <main className="flex">
+              <AdminSidebar />
+              {children}
+            </main>
           </ThemeProvider>
         </SessionProvider>
       </body>

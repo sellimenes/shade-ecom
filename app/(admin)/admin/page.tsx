@@ -7,7 +7,7 @@ type Props = {};
 
 const page = (props: Props) => {
   return (
-    <div className="container my-4 space-y-12">
+    <div className="flex-1 mx-10 my-4 space-y-12">
       <AdminAddProductForm />
       <AdminProductsTable />
     </div>
