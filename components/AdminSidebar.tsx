@@ -18,17 +18,25 @@ const AdminSidebar = (props: Props) => {
                 Canlı Siteyi Görüntüle
               </li>
             </Link>
-            <Link href="/" target="_blank">
+            <Link href="/admin">
+              <li className="p-3 hover:bg-slate-50 hover:text-primary">
+                Anasayfa
+              </li>
+            </Link>
+            <Link href="/admin/products" className="">
               <li className="p-3 hover:bg-slate-50 hover:text-primary">
                 Ürünler
               </li>
             </Link>
-            <Link href="/" target="_blank">
+            <Link
+              href="admin/category"
+              className="pointer-events-none opacity-50"
+            >
               <li className="p-3 hover:bg-slate-50 hover:text-primary">
                 Kategoriler
               </li>
             </Link>
-            <Link href="/" target="_blank">
+            <Link href="admin/blog" className="pointer-events-none opacity-50">
               <li className="p-3 hover:bg-slate-50 hover:text-primary">Blog</li>
             </Link>
           </ul>

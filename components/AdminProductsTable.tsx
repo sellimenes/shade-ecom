@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Trash2 } from "lucide-react";
 import axios from "axios";
 
@@ -41,22 +41,19 @@ const tableHeaderItems = [
   },
 ];
 
-// account test
-
 const AdminProductsTable = (props: Props) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     getProducts().then((products) => setProducts(products));
-  }, [products]);
+  }, []);
 
   const handleDelete = (id: string) => {
-    console.log("delete");
     axios.delete(`/api/products/${id}`);
   };
   return (
     <Table>
-      <TableCaption>A list of your recent invoices.</TableCaption>
+      <TableCaption>A list of your products.</TableCaption>
       <TableHeader>
         <TableRow>
           {tableHeaderItems.map((item, index) => (
