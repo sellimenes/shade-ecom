@@ -2,16 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { LayoutGrid, List } from "lucide-react";
+import { LayoutGrid, List, Loader } from "lucide-react";
 
-import Banner from "@/components/Banner";
 import PageHead from "@/components/PageHead";
 import SingleProductGrid from "@/components/SingleProductGrid";
 import SingleProductList from "@/components/SingleProductList";
 import { cn } from "@/lib/utils";
 import getProducts from "@/actions/getProducts";
 
-import BannerPic from "@/public/banners/Banners-02.png";
 import { Product } from "@prisma/client";
 
 type Props = {};
@@ -24,15 +22,17 @@ const CategoryPage = (props: Props) => {
     getProducts().then((products) => setProducts(products));
   }, [products]);
 
+  if (products.length < 1) return <Loader size={48} className="animate-spin" />;
+
   return (
     <>
       <PageHead title="Page Title" />
-      <section className="container my-24">
+      {/* <section className="container my-24">
         <Banner className="w-full aspect-[21/10]">
           <Image src={BannerPic} alt="" fill />
         </Banner>
-      </section>
-      <div className="container mb-10 flex gap-4">
+      </section> */}
+      <div className="container mb-10 flex gap-4 mt-4">
         <aside className="w-1/4 bg-orange-500"></aside>
         <div className="w-full flex flex-col gap-3">
           <div className="ml-auto flex items-center border border-black shadow-lg">

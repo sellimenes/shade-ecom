@@ -13,8 +13,8 @@ import { Navigation, Autoplay } from "swiper/modules";
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import Image from "next/image";
 
-import DemoBanner1 from "@/public/banners/demo-banner-1.jpeg";
-import DemoBanner2 from "@/public/banners/demo-banner-2.jpeg";
+import DemoBanner1 from "@/public/banners/test-banner-219.jpg";
+import DemoBanner2 from "@/public/banners/test-banner-219-2.jpg";
 
 type Props = {
   height?: string;
@@ -24,7 +24,7 @@ const Carousel = ({ height }: Props) => {
   return (
     <section className="relative w-full">
       <Swiper
-        navigation
+        // navigation
         loop
         autoplay={{
           delay: 500000000,
@@ -42,7 +42,7 @@ const Carousel = ({ height }: Props) => {
               alt="banner"
               fill
               style={{
-                objectFit: "contain",
+                objectFit: "cover",
               }}
             />
           </div>
@@ -54,7 +54,7 @@ const Carousel = ({ height }: Props) => {
               alt="banner"
               fill
               style={{
-                objectFit: "contain",
+                objectFit: "cover",
               }}
             />
           </div>

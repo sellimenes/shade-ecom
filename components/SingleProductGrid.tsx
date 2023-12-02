@@ -2,8 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import tshirtDemo from "@/public/products/tshirt-demo.jpeg";
-
 type Props = {
   isSale?: boolean;
   data: any;
@@ -14,7 +12,7 @@ const SingleProductGrid = ({ isSale, data }: Props) => {
     <Link href={`category/${data.id}`}>
       {/* TODO: Div will be turn to Image */}
       <div className="bg-muted w-full aspect-square mb-4 relative shadow-lg rounded-lg">
-        <Image src={tshirtDemo} fill alt="tshirt demo" />
+        <Image src={data.coverImage} fill alt="tshirt demo" />
         {isSale && (
           <div className="absolute left-2 top-2 px-3 py-1 bg-green-600 text-xs rounded-full text-white">
             Sale

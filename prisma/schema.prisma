@@ -33,6 +33,7 @@ model Product {
   isFeatured        Boolean  @default(false)
   isArchived        Boolean  @default(false)
   categoryId        String
+  coverImage        String?
   category          Category @relation("CategoryToProduct", fields: [categoryId], references: [id])
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt

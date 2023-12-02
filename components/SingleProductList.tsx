@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {
   isSale?: boolean;
@@ -11,8 +12,8 @@ const SingleProductList = ({ isSale, data }: Props) => {
   return (
     <Link href={`category/${data.id}`}>
       <div className="flex items-center gap-10">
-        {/* TODO: Div image olacak */}
         <div className="bg-muted aspect-square h-full min-h-[300px] shadow-lg relative">
+          <Image src={data.coverImage} fill alt="deneme" />
           {isSale && (
             <div className="absolute left-2 top-2 px-3 py-1 bg-green-600 text-xs rounded-full text-white">
               Sale

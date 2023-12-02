@@ -40,64 +40,13 @@ const ProductDetailCarousel = (props: Props) => {
         className="w-full"
       >
         <SwiperSlide className="cursor-crosshair">
-          <img
-            alt="demogorsel"
-            src="https://swiperjs.com/demos/images/nature-1.jpg"
-          />
+          <img alt="demogorsel" src="/products/product-demo-coat-1.jpg" />
         </SwiperSlide>
         <SwiperSlide className="cursor-crosshair">
-          <img
-            alt="demogorsel"
-            src="https://swiperjs.com/demos/images/nature-2.jpg"
-          />
+          <img alt="demogorsel" src="/products/product-demo-coat-2.jpg" />
         </SwiperSlide>
         <SwiperSlide className="cursor-crosshair">
-          <img
-            alt="demogorsel"
-            src="https://swiperjs.com/demos/images/nature-3.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide className="cursor-crosshair">
-          <img
-            alt="demogorsel"
-            src="https://swiperjs.com/demos/images/nature-4.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide className="cursor-crosshair">
-          <img
-            alt="demogorsel"
-            src="https://swiperjs.com/demos/images/nature-5.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide className="cursor-crosshair">
-          <img
-            alt="demogorsel"
-            src="https://swiperjs.com/demos/images/nature-6.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide className="cursor-crosshair">
-          <img
-            alt="demogorsel"
-            src="https://swiperjs.com/demos/images/nature-7.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide className="cursor-crosshair">
-          <img
-            alt="demogorsel"
-            src="https://swiperjs.com/demos/images/nature-8.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide className="cursor-crosshair">
-          <img
-            alt="demogorsel"
-            src="https://swiperjs.com/demos/images/nature-9.jpg"
-          />
-        </SwiperSlide>
-        <SwiperSlide className="cursor-crosshair">
-          <img
-            alt="demogorsel"
-            src="https://swiperjs.com/demos/images/nature-10.jpg"
-          />
+          <img alt="demogorsel" src="/products/product-demo-coat-3.jpg" />
         </SwiperSlide>
       </Swiper>
       <Swiper
@@ -111,34 +60,19 @@ const ProductDetailCarousel = (props: Props) => {
         className="w-full"
       >
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <img src="/products/product-demo-hat-1.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          <img src="/products/product-demo-hat-3.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <img src="/products/product-demo-hat-2.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          <img src="/products/product-demo-jacket-1.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+          <img src="/products/product-demo-jacket-2.jpg" />
         </SwiperSlide>
       </Swiper>
     </div>
