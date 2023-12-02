@@ -14,9 +14,15 @@ import "swiper/css/pagination";
 // import required modules
 import Image from "next/image";
 
-import Product1 from "@/public/products/product1.webp";
-import Product2 from "@/public/products/product2.webp";
-import Product3 from "@/public/products/product3.webp";
+import DemoProductTshirt1 from "@/public/products/product-demo-tshirt.jpg";
+import DemoProductShoes1 from "@/public/products/product-demo-shoes-1.jpg";
+import DemoProductShoes2 from "@/public/products/product-demo-shoes-2.jpg";
+import DemoProductCoat1 from "@/public/products/product-demo-coat-1.jpg";
+import DemoProductCoat2 from "@/public/products/product-demo-coat-2.jpg";
+import DemoProductHat1 from "@/public/products/product-demo-hat-1.jpg";
+import DemoProductHat2 from "@/public/products/product-demo-hat-2.jpg";
+import DemoProductJacket1 from "@/public/products/product-demo-jacket-1.jpg";
+import DemoProductJeans1 from "@/public/products/product-demo-jeans-1.jpg";
 
 type Props = {};
 
@@ -46,47 +52,47 @@ const CollectionProductsCarousel = (props: Props) => {
         >
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard image={Product1} />
+              <SingleProductCard image={DemoProductTshirt1} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard image={Product2} />
+              <SingleProductCard image={DemoProductShoes1} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard image={Product3} />
+              <SingleProductCard image={DemoProductJeans1} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard image={Product2} />
+              <SingleProductCard image={DemoProductJacket1} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard image={Product1} />
+              <SingleProductCard image={DemoProductHat1} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard image={Product2} />
+              <SingleProductCard image={DemoProductCoat1} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard image={Product3} />
+              <SingleProductCard image={DemoProductShoes2} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard image={Product2} />
+              <SingleProductCard image={DemoProductCoat2} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="flex justify-center">
-              <SingleProductCard image={Product1} />
+              <SingleProductCard image={DemoProductHat2} />
             </div>
           </SwiperSlide>
         </Swiper>

@@ -10,7 +10,7 @@ import Partners from "@/components/Partners";
 function Home() {
   return (
     <main className="w-full h-full">
-      <Carousel height="550px" />
+      <Carousel />
       <Services />
       <TripleBanners />
       <CollectionProductsCarousel />

@@ -11,14 +11,10 @@ import "swiper/css/navigation";
 import { Navigation, Autoplay } from "swiper/modules";
 
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
-
-import BannerCopyWrite from "@/public/banners/copywriting.png";
-import BannerConversions from "@/public/banners/conversions.png";
-import BannerManageReviews from "@/public/banners/managing-reviews.png";
-import BannerMobileSearch from "@/public/banners/mobile-search.png";
-import BannerPurchasingConversions from "@/public/banners/purchasing-conversions.png";
-import BannerTimeSpent from "@/public/banners/time-spent.png";
 import Image from "next/image";
+
+import DemoBanner1 from "@/public/banners/demo-banner-1.jpeg";
+import DemoBanner2 from "@/public/banners/demo-banner-2.jpeg";
 
 type Props = {
   height?: string;
@@ -26,27 +22,27 @@ type Props = {
 
 const Carousel = ({ height }: Props) => {
   return (
-    <section className="relative">
+    <section className="relative w-full">
       <Swiper
         navigation
         loop
         autoplay={{
-          delay: 5000,
+          delay: 500000000,
           pauseOnMouseEnter: true,
           disableOnInteraction: false,
         }}
         modules={[Navigation, Autoplay]}
-        className="w-full border-b border-primary"
-        style={{ height: height }}
+        className="w-full aspect-[21/9] border-b border-primary"
+        // style={{ height: height }}
       >
         <SwiperSlide>
           <div className="w-full h-full">
             <Image
-              src={BannerCopyWrite}
+              src={DemoBanner1}
               alt="banner"
               fill
               style={{
-                objectFit: "cover",
+                objectFit: "contain",
               }}
             />
           </div>
@@ -54,59 +50,11 @@ const Carousel = ({ height }: Props) => {
         <SwiperSlide>
           <div className="w-full h-full">
             <Image
-              src={BannerConversions}
+              src={DemoBanner2}
               alt="banner"
               fill
               style={{
-                objectFit: "cover",
-              }}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full h-full">
-            <Image
-              src={BannerManageReviews}
-              alt="banner"
-              fill
-              style={{
-                objectFit: "cover",
-              }}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full h-full">
-            <Image
-              src={BannerMobileSearch}
-              alt="banner"
-              fill
-              style={{
-                objectFit: "cover",
-              }}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full h-full">
-            <Image
-              src={BannerPurchasingConversions}
-              alt="banner"
-              fill
-              style={{
-                objectFit: "cover",
-              }}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full h-full">
-            <Image
-              src={BannerTimeSpent}
-              alt="banner"
-              fill
-              style={{
-                objectFit: "cover",
+                objectFit: "contain",
               }}
             />
           </div>
@@ -121,11 +69,19 @@ export default Carousel;
 
 const SocialIcons = () => {
   return (
-    <div className="z-20 flex items-center gap-2 absolute bottom-24 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-auto lg:right-10 lg:bottom-4">
-      <Facebook size={18} />
-      <Instagram size={18} />
-      <Twitter size={18} />
-      <Youtube size={18} />
+    <div className="z-20 flex items-center gap-2 absolute bottom-24 left-1/2 -translate-x-1/2 lg:translate-x-4 lg:left-auto lg:right-10 lg:bottom-4">
+      <div className="p-2 rounded-full bg-orange-500">
+        <Facebook size={14} color="white" />
+      </div>
+      <div className="p-2 rounded-full bg-orange-500">
+        <Instagram size={14} color="white" />
+      </div>
+      <div className="p-2 rounded-full bg-orange-500">
+        <Twitter size={14} color="white" />
+      </div>
+      <div className="p-2 rounded-full bg-orange-500">
+        <Youtube size={14} color="white" />
+      </div>
     </div>
   );
 };
