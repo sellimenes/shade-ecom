@@ -11,9 +11,9 @@ const SubscribeNewsletter = (props: Props) => {
   return (
     <div className="container py-5 flex flex-col md:flex-row gap-5 md:items-center justify-between">
       <div className="uppercase flex items-center gap-3">
-        <MailPlus size={55} className="text-destructive" />
+        <MailPlus size={55} className="text-muted" />
         <p className="font-semibold">
-          <span className="text-destructive">$90 Off*</span> your first order!
+          <span className="text-muted">$90 Off*</span> your first order!
           Subscribe to <br /> our newsletter today.
         </p>
       </div>
@@ -21,9 +21,9 @@ const SubscribeNewsletter = (props: Props) => {
         <Input
           type="email"
           placeholder="Your email address"
-          className="rounded-r-0 rounded-l-full border-0 text-primary h-full"
+          className="rounded-r-0 rounded-l-full border-0 text-white h-full bg-muted border-r border-white"
         />
-        <Button className="bg-destructive h-full rounded-r-full text-white hover:bg-transparent hover:text-destructive transition border border-destructive">
+        <Button className="bg-muted h-full rounded-r-full text-white hover:bg-transparent hover:text-destructive transition border border-muted">
           Subscribe
         </Button>
       </div>

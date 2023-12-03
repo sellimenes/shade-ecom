@@ -32,7 +32,7 @@ const CollectionProductsCarousel = (props: Props) => {
       <h3 className="uppercase text-primary text-sm text-center my-2">
         Browse Our Items
       </h3>
-      <h4 className="text-4xl font-semibold text-center">
+      <h4 className="text-4xl font-semibold text-center text-muted dark:text-primary-foreground">
         Ideal for Your Home <br />
         2023 Collection
       </h4>

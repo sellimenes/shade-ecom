@@ -6,7 +6,7 @@ type Props = {};
 const SocialAndBlog = (props: Props) => {
   return (
     <section className="w-full h-72 flex flex-col sm:flex-row my-16 text-white">
-      <div className="bg-[#242424] flex-1 flex flex-col items-center justify-center gap-2">
+      <div className="bg-primary flex-1 flex flex-col items-center justify-center gap-2">
         <p className="text-3xl font-semibold text-center">
           Office Chair <br />
           Collection
@@ -15,7 +15,7 @@ const SocialAndBlog = (props: Props) => {
           View All Products
         </Link>
       </div>
-      <div className="bg-[#414141] flex-1 flex flex-col items-center justify-center gap-2">
+      <div className="bg-muted flex-1 flex flex-col items-center justify-center gap-2">
         <p className="text-3xl font-semibold text-center">
           Follow Our Store <br />
           On Instagram

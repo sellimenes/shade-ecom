@@ -56,7 +56,7 @@ export default function Header({}: Props) {
   }, [session]);
   const { setTheme } = useTheme();
   return (
-    <header className="bg-primary py-3 text-white">
+    <header className="bg-primary py-3 text-primary-foreground">
       <div className="container flex justify-between items-center">
         <Link href="/">
           <h1 className="italic font-bold text-2xl">Shade E-Com</h1>

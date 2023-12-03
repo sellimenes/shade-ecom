@@ -49,7 +49,6 @@ const RelatedProducts = (props: Props) => {
 export default RelatedProducts;
 
 const SingleProduct = ({ data }: any) => {
-  console.log(data);
   return (
     <div className="cursor-pointer hover:scale-105 transition-all duration-300">
       <div className="relative w-full aspect-square bg-gray-200 rounded-lg">
