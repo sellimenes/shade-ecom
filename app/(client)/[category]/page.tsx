@@ -20,7 +20,7 @@ const CategoryPage = (props: Props) => {
 
   useEffect(() => {
     getProducts().then((products) => setProducts(products));
-  }, [products]);
+  }, []);
 
   if (products.length < 1) return <Loader size={48} className="animate-spin" />;
 

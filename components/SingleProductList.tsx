@@ -21,7 +21,7 @@ const SingleProductList = ({ isSale, data }: Props) => {
           )}
         </div>
         <div className="flex flex-col gap-3 flex-1">
-          <h2 className="font-bold text-3xl">{data.name}</h2>
+          <h2 className="font-bold text-3xl line2">{data.name}</h2>
           {isSale ? (
             <div className="flex gap-2">
               <p className="text-gray-300 line-through text-lg">$89.99</p>
@@ -30,7 +30,7 @@ const SingleProductList = ({ isSale, data }: Props) => {
           ) : (
             <p>${data.price}</p>
           )}
-          <p className="text-lg text-gray-400 max-w-[95%]">
+          <p className="text-lg text-gray-400 max-w-[95%] line-clamp-3">
             {data.description}
           </p>
           <Button className="max-w-max">Add to Cart</Button>
